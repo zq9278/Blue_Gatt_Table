@@ -1,0 +1,11 @@
+idf_component_register(SRCS "gatts_table_creat_demo.c"
+                    SRCS "../ntc/ntc.c"
+                    SRCS "../pid/pid.c"
+                    SRCS "../pwm/pwm.c"
+                    SRCS "../usart/usart.c"
+                    INCLUDE_DIRS "."
+                    INCLUDE_DIRS "../ntc"
+                    INCLUDE_DIRS "../pid"
+                    INCLUDE_DIRS "../pwm"
+                    INCLUDE_DIRS "../usart"
+                    )

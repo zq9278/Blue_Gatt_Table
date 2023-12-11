@@ -1,0 +1,29 @@
+{
+    "configurations": [
+        {
+            "name": "ESP-IDF",
+            "includePath": [
+                "${workspaceFolder}/**",
+                "${workspaceFolder}/main/**",
+                "${workspaceFolder}/components/components/**",
+                "${workspaceFolder}/ntc/**",
+                "${workspaceFolder}/pid/**",
+                "${workspaceFolder}/tutorial/**"
+                // 如果您使用的是ESP-IDF，还应包括其组件路径
+            ],
+            "browse": {
+                "path": [
+                    "${workspaceFolder}/**"
+                ],
+                "limitSymbolsToIncludedHeaders": true,
+                "databaseFilename": ""
+            },
+            "intelliSenseMode": "${default}",
+            "compilerPath": "${default}",
+            "cStandard": "${default}",
+            "cppStandard": "${default}"
+        }
+    ],
+    "version": 4
+}
+
