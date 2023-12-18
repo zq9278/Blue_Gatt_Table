@@ -8,7 +8,7 @@
     },
     "idf.espIdfPath": "/home/zq/esp/esp-idf",
     "idf.openOcdConfigs": [
-        "board/esp32c3-ftdi.cfg"
+        "board/esp32c3-builtin.cfg"
     ],
     "idf.port": "/dev/ttyACM0",
     "idf.pythonBinPath": "/home/zq/.espressif/python_env/idf5.1_py3.11_env/bin/python",
@@ -46,6 +46,7 @@
         "semaphore": "c",
         "semphr.h": "c"
     },
-    "idf.portWin": "COM14",
-    "cmake.configureOnOpen": false
+    "idf.portWin": "COM3",
+    "cmake.configureOnOpen": false,
+    "idf.customAdapterTargetName": "C:\\Espressif\\tools\\openocd-esp32\\v0.12.0-esp32-20230921\\openocd-esp32\\share\\openocd\\scripts\\board\\esp32c3-bridge.cfg"
 }
