@@ -22,4 +22,4 @@ const static char *TAG = "EXAMPLE";
 static int adc_raw;
 static bool example_adc_calibration_init(adc_unit_t unit, adc_channel_t channel, adc_atten_t atten, adc_cali_handle_t *out_handle);
 static void example_adc_calibration_deinit(adc_cali_handle_t handle);
-void ntc_read_task(void *pvParameter);
+void ntc_read_task(void *pvParameter);                                                                                                                                                                      

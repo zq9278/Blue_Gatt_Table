@@ -40,22 +40,22 @@ void set_pwm_duty(uint8_t duty_value)
     ledc_update_duty(LEDC_HS_MODE, LEDC_HS_CH0_CHANNEL);
 }
 
-void pwm_control_task(void *pvParameter)
-{
-    ntc_pwm_init();
-
-    // 使用 len ...
-    // 任务完成后释放内存
-
-    while (1)
-    {
-
-        printf("pwm_duty = %d\n", pwm_duty);
-        set_pwm_duty(pwm_duty);
-        vTaskDelay(10);
-    }
-
-    free(pvParameter);
-    // 任务完成后，删除任务
-    vTaskDelete(NULL);
-}
+//void pwm_control_task(void *pvParameter)
+//{
+//    ntc_pwm_init();
+//
+//    // 使用 len ...
+//    // 任务完成后释放内存
+//
+//    while (1)
+//    {
+//
+//        printf("pwm_duty = %d\n", pwm_duty);
+//        set_pwm_duty(pwm_duty);
+//        vTaskDelay(10);
+//    }
+//
+//    free(pvParameter);
+//    // 任务完成后，删除任务
+//    vTaskDelete(NULL);
+//}

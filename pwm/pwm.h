@@ -13,6 +13,6 @@ extern uint8_t pwm_duty;
 #define LEDC_HS_CH0_CHANNEL    LEDC_CHANNEL_0
 #define LEDC_TEST_DUTY         (8192) // 占空比
 #define LEDC_TEST_FADE_TIME    (3000)
-void pwm_control_task(void *pvParameter);
+//void pwm_control_task(void *pvParameter);
 void set_pwm_duty(uint8_t duty_value);
 void ntc_pwm_init();                                        

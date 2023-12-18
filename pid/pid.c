@@ -31,6 +31,7 @@ void pid_control_task(void *pvParameter)
 {
    
     PID_Init(&pid, 100.0, 0.05, 0.0); // 初始化PID参数
+    ntc_pwm_init();
     // 主控制循环
    while (1)
     {
@@ -38,6 +39,8 @@ void pid_control_task(void *pvParameter)
         // 计算PID输出
         xSemaphoreTake(temperatureset, portMAX_DELAY);
         pwm_duty = PID_Compute(&pid, setpoint, temperatures);
+       // printf("pwm_duty = %d\n", pwm_duty);
+        set_pwm_duty(pwm_duty);
         xSemaphoreGive(temperatureset);
         
         // 等待一段时间

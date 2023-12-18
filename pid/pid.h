@@ -2,6 +2,8 @@
 #include "freertos/FreeRTOS.h"
 #include "freertos/task.h"
 #include "freertos/semphr.h"
+#include "pwm.h"
+
 
 extern double temperatures;//实际温度
 extern uint8_t pwm_duty;

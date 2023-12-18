@@ -29,12 +29,16 @@ void ntc_read_task(void *pvParameter) // 主函数
                                                                                       // 获取互斥量并更新温度
         xSemaphoreTake(temperatureMutex, portMAX_DELAY);
         double resistance = (adc_raw / 4095.0) * 3.3;
+        printf("adc_raw:%d",adc_raw);
         resistance = (resistance * 100000) / (3.3 - resistance);
+        printf("resistance:%f",resistance);
         temperatures = (1.0 / (1.0 / T0 + log(resistance / R0) / B)) - 273.15;
+        printf("temperatures:%f\n",temperatures);
         sprintf(latestTemperature, "%f", temperatures);
+
         xSemaphoreGive(temperatureMutex);
 
         //ESP_LOGI(TAG, "ADC%d Channel[%d] Raw Data: %f", ADC_UNIT_1 + 1, EXAMPLE_ADC1_CHAN4, temperatures); // 输出ADC1通道4的原始数据
-        vTaskDelay(pdMS_TO_TICKS(10));                                                              // 延时1000毫秒
+        vTaskDelay(pdMS_TO_TICKS(100));                                                              // 延时1000毫秒
     }
 }

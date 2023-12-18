@@ -62,7 +62,7 @@ uint16_t heart_rate_handle_table2[HRS_IDX_NB2];
 
 // 全局变量来存储温度
 char latestTemperature[12];
-double setpoint = 50; // 目标温度
+double setpoint = 40; // 目标温度
 double temperatures;  // 实际温度
 // 互斥量用于同步对全局变量的访问
 SemaphoreHandle_t temperatureMutex;
@@ -560,18 +560,6 @@ static void gatts_profile_event_handler(esp_gatts_cb_event_t event,
             // 创建内存空间并存储数据指针
             if (param->write.handle == 49)
             {
-                // uint8_t *len_ptr = malloc(sizeof(uint8_t))*2;
-                // if (len_ptr != NULL)
-                // {
-                //     *len_ptr = *(param->write.value); // 复制值，而不是更改指针
-                //     // len_ptr = param->write.value;// 复制值，而不是更改指针
-                //     ESP_LOGI(GATTS_TABLE_TAG, "double:%c",*(param->write.value));
-                //     ESP_LOGI(GATTS_TABLE_TAG, "double:%c",*((param->write.value)+1));
-                // }
-                // //xSemaphoreTake(temperatureset, portMAX_DELAY);
-                // double setpoint = *(double *)(len_ptr);
-                // //memcpy(&setpoint,*(uint8_t*)param->write.value, sizeof(double));
-                // xSemaphoreGive(temperatureset);
                 char combinedStr[]="1";
                 char *endPtr;
                 for (int i = 0; i < param->write.len; i++)
@@ -585,7 +573,6 @@ static void gatts_profile_event_handler(esp_gatts_cb_event_t event,
                 xSemaphoreGive(temperatureset);
                 ESP_LOGI(GATTS_TABLE_TAG, "double:%f",setpoint);
             }
-
             // esp_log_buffer_hex(GATTS_TABLE_TAG, param->write.value, param->write.len);
             // ESP_LOGI(GATTS_TABLE_TAG, "double:%f",setpoint);
             //   如果是特定的描述符被写入，根据写入的值启用通知或指示
@@ -1006,7 +993,7 @@ void app_main(void)
     temperatureset = xSemaphoreCreateMutex();
 
     xTaskCreate(ntc_read_task, "ntc_read_task", 2048, NULL, 5, &ntchandle);
-    xTaskCreate(pwm_control_task, "pwm_control_task", 2048, NULL, 5, &pwmhandle);
+//    xTaskCreate(pwm_control_task, "pwm_control_task", 2048, NULL, 5, &pwmhandle);
     esp_ble_gatts_set_attr_value(heart_rate_handle_table[IDX_CHAR_VAL_B], sizeof(latestTemperature),
                                  (uint8_t *)latestTemperature);
     xTaskCreate(pid_control_task, "pid_control_task", 2048, NULL, 5, NULL);
