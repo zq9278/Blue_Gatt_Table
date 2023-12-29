@@ -46,7 +46,7 @@
         "semaphore": "c",
         "semphr.h": "c"
     },
-    "idf.portWin": "COM3",
+    "idf.portWin": "COM19",
     "cmake.configureOnOpen": false,
     "idf.customAdapterTargetName": "C:\\Espressif\\tools\\openocd-esp32\\v0.12.0-esp32-20230921\\openocd-esp32\\share\\openocd\\scripts\\board\\esp32c3-bridge.cfg"
 }

@@ -1,7 +1,7 @@
 {
     "version":            "1",
     "project_name":       "Blue_Gatt_Table",
-    "project_version":    "3afd2a2-dirty",
+    "project_version":    "95470f8-dirty",
     "project_path":       "D:/esp-code/Blue_Gatt_Table",
     "idf_path":           "C:/Espressif/frameworks/esp-idf-v5.1.2",
     "build_dir":          "D:/esp-code/Blue_Gatt_Table/build",
@@ -11,7 +11,7 @@
     "app_elf":            "Blue_Gatt_Table.elf",
     "app_bin":            "Blue_Gatt_Table.bin",
     "build_type":         "flash_app",
-    "git_revision":       "v5.1.2-dirty",
+    "git_revision":       "HEAD-HASH-NOTFOUND",
     "target":             "esp32c3",
     "rev":                "",
     "min_rev":            "3",
