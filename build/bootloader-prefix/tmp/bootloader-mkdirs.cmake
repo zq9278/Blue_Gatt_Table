@@ -4,7 +4,7 @@
 cmake_minimum_required(VERSION 3.5)
 
 file(MAKE_DIRECTORY
-  "C:/Espressif/frameworks/esp-idf-v5.1.2/components/bootloader/subproject"
+  "D:/SoftWare/Espressif/frameworks/esp-idf-v5.1.2/components/bootloader/subproject"
   "D:/esp-code/Blue_Gatt_Table/build/bootloader"
   "D:/esp-code/Blue_Gatt_Table/build/bootloader-prefix"
   "D:/esp-code/Blue_Gatt_Table/build/bootloader-prefix/tmp"
